@@ -1,0 +1,135 @@
+
+
+
+<h1>  Direct Mapping  </h1>
+<br>
+<img src="./app/img/direct.gif" alt="">
+<p>figure 1 showing the mapping of main memory blocks to cache</p>
+
+<p>Direct mapping is the simplest of the caching techniques that is used to locate a memory address
+within cache.
+<br>
+If each block from main memory has only one place it can appear in the cache (i.e. a block from
+memory is transferred to a line in cache), the cache is said to be direct mapped.
+NB: There are more main memory blocks than cache lines.
+<br>
+Additionally there is no replacement algorithm in direct mapping since there is no choice as to
+which lines would need to be replaced.</p>
+<h1>Direct Mapping address structure </h1>
+<p>The structure of a memory address for direct mapping is made up of a tag,
+     lines in the cache and the location on a line of cache. </p>
+
+     <table>
+         <tr>
+             <td id="s">s</td>
+             <td style="border-right: solid thin dimgrey;"></td>
+         </tr>
+         <tr id="border">
+             <td>s-r</td>
+             <td>r</td>
+             <td>w</td>
+         </tr>
+         <tr>
+             <td style="border-left: solid thin dimgrey;">&#8592;</td>
+             <td>s+w</td>
+             <td style="border-right: solid thin dimgrey;">&#8594;</td>
+         </tr>
+     </table>
+<p>s-r represents the tag (tag here represents where in main memory the address came from)**
+r represents the number of bits required to uniquely identify a line in the cache 
+w is the number of bits that uniquely identifies the location on a line of cache
+s+w represents the number of bits required to uniquely identify main memory</p>
+<br>
+<table id="ad" class="w3-table-all w3-card-4">
+    <tr>
+        <th id="adv">Advantages</th>
+        <th id="disadv">Disadvantages</th>
+    </tr>
+    <tr>
+        <td class="l">  
+            Direct Mapping is easy to implement since only the cache line associated with the address is searched to indicate a cache hit or a cache miss.  
+        </td>
+        <td class="r">
+            Collisions may occur and to correct these collisions, the address in the cache line is overwritten.
+        </td>
+    </tr>
+    <tr>
+        <td class="l">
+            Direct Mapping technique is Inexpensive since it only needs to make one comparison to detect a Cache hit
+        </td>
+        <td class="r">
+            If two blocks map to the same location in cache and they are continually referenced, the two blocks will be continually swapped in and out. This is known as thrashing
+        </td>
+    </tr>
+    <tr>
+        <td class="l">
+
+        </td>
+        <td class="r">
+            Direct Mapping is the simplest technique and easy to implement.
+        </td>
+    </tr>
+</table>
+
+
+
+  
+<h1>Example of direct mapping</h1>
+<p>A cache memory can hold 32 Kbytes and data are transferred between main memory and the cache in blocks of 16bytes each. The main memory consists of 512 Kbytes. Show the format of main memory addresses in a direct mapping cache organization. You are to assume that addressing is done at the byte-level.</p>
+<p>Cache capacity = 32 Kbytes</p>
+<p>Block size = 16 bytes each</p>
+<p>Main memory = 512 Kbytes</p>
+<p>So therefore we are now going to work out w, r, s+w and s-r.</p>
+<p>Let w be the number of bits required to uniquely identify a location on a line of cache.</p>
+<p>∴ 2<sup>w</sup> = Line Size</p>
+<p>           = 16 </p>
+<p> = 2<sup>4</sup></p>
+<p>2<sup>w</sup>= 2<sup>4</sup></p>
+<p>∴ w = 4</p>
+<p>Let r represent the number of bits required to uniquely identify a line in cache.</p>
+<p>∴ 2<sup>r</sup> = the number of lines in a cache</p>
+<p>          = cache capacity/line size </p>
+<p>         = 32K /16</p>
+<p> = 2K</p>
+<p>= 2<sup>1</sup>x 2<sup>10</sup></p>
+<p> = 2<sup>11</sup></p>
+<p>∴ r = 11 bits</p>
+<p>Let s+w be the number of bits required to uniquely identify an address in main memory.
+</p>
+<p>∴ 2<sup>s+w</sup> = memory size</p>
+<p>= 512 Kbytes</p>
+<p> = 2<sup>9</sup> x 2<sup>10</sup></p>
+<p>= 2<sup>19</sup></p>
+<p>      ∴ s+w = 19 bits</p>
+<h4>Additionally </h4>
+<p>s-r = (s+w) – (r+w)    </p>
+<p>= 19        -      15</p>
+<p>= 4</p>
+<br><br>
+
+        <h1>Questions</h1>
+        <p>There are more blocks of memory than the lines in cache?</p>
+        <form action="">
+        <input type="checkbox" name="answer1" value="True">True<br>
+        <input type="checkbox" name="answer1" value="False">False 
+        </form>
+        <p style="display: none;">Correct</p>
+        <p style="display: none;">Incorrect</p>
+        <p id="test"> </p>
+        <button (click)="check()">check</button>
+
+
+        <p>How many sections does the structure of direct mapping memory address have?</p>
+        <form action="">
+        <input type="text" name="answer2" ><br>
+        </form>
+        <p>What are the different parts in the memory address for direct mapping?</p>
+
+<video src="/app/video/direct.mp4" type="video/mp4" controls width="850" height="500"></video>
+
+
+<h1>References</h1>
+<p>&quot;CSCI 4717: Direct Mapping Cache Assignment.&quot; CSCI 4717: Direct Mapping Cache Assignment. Accessed
+
+March 16, 2017. http://csciwww.etsu.edu/tarnoff/labs4717/x86_sim/direct.html.</p>
+<p>http://mykeepit.blogspot.com/2012/09/explain-concept- of-direct- mapping-cache.html.</p>

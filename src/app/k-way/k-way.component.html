@@ -1,0 +1,103 @@
+<html>
+  <body>
+
+
+    <h1>K way set associative mapping</h1>
+    <p>K-Way Set Associative Mapping is an agreement that combines the strengths of both the Direct and Fully
+Associative approaches to mapping while minimising their disadvantages. In this form of mapping the
+cache consists of a number of sets where each set consists of a number of lines amounting to 2 x for
+some value x.</p>
+
+<figure>
+<img src="./../app/img/kway1.jpg" alt="" >
+</figure>
+
+<p>As shown in the diagram above, the main memory block to be transferred to cache is stored in a limited
+
+amount of lines that defines a set.</p>
+
+<p>The main memory address block in K-Way Set Associative Mapping is defined in three parts:</p>
+
+<ul>
+  <li>
+    s – d: the number of bits to uniquely identify the tag in cache
+  </li>
+  <li>d: the number of bits to uniquely identify the number of lines in a set in cache</li>
+  <li>w: the number of bits to uniquely identify a location on a line of cache (word)</li>
+  <li>s+w: the number of bits to uniquely identify the size of a memory address</li>
+</ul>
+
+<figure>
+<img src="./../app/img/kway photo2.png" alt="" >
+</figure>
+
+<table id="ad" class="w3-table-all w3-card-4">
+    <tr>
+        <th id="adv">Advantages</th>
+        <th id="disadv">Disadvantages</th>
+    </tr>
+    <tr>
+        <td class="l">  
+          This technique is said to be very robust since as the number of sets increases, the hit ratio increases.
+        </td>
+        <td class="r">
+          As the number of sets increases, the overall search speed decreases.
+        </td>
+    </tr>
+    <tr>
+        <td class="l">
+A replacement algorithm will only be implemented in the case of a set being full when a new
+
+memory block must be copied from main memory. Examples of algorithms which may be used
+
+include Random, Least Frequently Used, Least Recently Used and First-In- First-Out.
+        </td>
+        <td class="r">
+          The complexity of cache increases as the associativity increases.
+        </td>
+    </tr>
+    
+</table>
+
+<br>
+
+<h1>Example of K-set associative</h1>
+<p>A cache memory has a line of four 32 bit words and a capacity of 8k words. The main memory size that is
+
+cacheable is 512Mbits. Assume that addressing is done at the byte level. Show the format of a main
+
+memory address using four – way set associative mapping.
+</p>
+<p>Line size = 4x32bits = 128 bits= 128bits/8= 16 bytes</p>
+<p>Cache capacity = 8k words = 2<sup>3</sup>x 2<sup>10</sup>x 2<sup>5</sup> = 2<sup>18</sup>  </p>
+<p>Convert to bytes</p>
+<p>2<sup>18</sup>/ 2<sup>3</sup> = 2<sup>15</sup> bytes</p>
+<p>Main memory capacity</p>
+<p>capacity = 2<sup>9</sup>x 2<sup>20</sup> = 2<sup>29</sup></p>
+<p>Convert to bytes</p>
+<p>2<sup>29</sup> /2<sup>3</sup> = 2<sup>26</sup></p>
+<p>Let w be the number of bits required to uniquely identify a location on a line of cache.</p>
+<p>∴ 2<sup>w</sup>= Line Size</p>
+<p> = 16</p>
+<p> = 2<sup>4</sup></p>
+<p>∴ w = 4 bits</p>
+<p>Let d be the number of bits to uniquely identify the number of sets in cache</p>
+
+<p>∴ 2<sup>d</sup> = the number of lines in cache/the number of lines per set</p>
+<p> The number of lines in cache = cache capacity/ the number of lines in cache</p>
+<p> = 2<sup>15</sup>/ 2<sup>4</sup> = 2<sup>11</sup></p>
+<p>∴ 2<sup>d</sup> = 2<sup>11</sup>/ 2<sup>2</sup> = 2<sup>9</sup></p>
+<p>∴ d = 9bits</p>
+<p>Let s-d be the number of bits to uniquely identify the tag in cache</p>
+<p>s-d = (s+w) – (d+w)</p>
+<p>= 26 – (9+4)</p>
+<p> = 13 bits</p>
+<p>Therefore the format of the address is</p>
+<figure>
+  <img src="./../app/img/kway photo3.png" alt="">
+</figure>
+
+    <video src="/app/video/kway.mp4" type="video/mp4" controls width="850" height="500"></video>
+
+  </body>
+</html>

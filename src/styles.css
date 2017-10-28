@@ -1,0 +1,14 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Trebuchet MS", Times, serif;
+    color: dimgrey;
+}
+h1,h2,h3,h4,h5,h6{
+    color: #24395b;
+    /*text-decoration: underline;*/
+    text-align: center;
+}
+test {
+    background-color: white;
+}

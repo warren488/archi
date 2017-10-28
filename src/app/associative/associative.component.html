@@ -1,0 +1,128 @@
+<h1>Fully Associative Mapping</h1>
+<p>
+  In Fully Associative Mapping, a main memory block can be placed in any line of cache.
+<br>
+</p>
+<figure>
+<img src="./../app/img/full.jpg" alt="" id="firsti">
+<figcaption>
+    figure 1 showing the mapping of main memory blocks to cache
+</figcaption>
+<p>
+The memory address is interpreted as tag (s) and word (w) as shown in the diagram below.
+</p>
+</figure>
+<img src="./../app/img/memoryaddress.jpg" alt="" >
+<p>
+  Tag ‘s’ – the number of bits required to uniquely identify a block of memory
+  <br>
+  Word ‘w’ – the number of bits required to uniquely identify a location on a line of cache (column)
+  <br>
+  <br>
+  In this form of mapping, the tag of each line in cache is examined in 
+  parallel (simultaneously) for a match. Once found, the column (word) is then 
+  searched for. If there is a cache miss, that is, the data is not found in cache,
+   then a replacement algorithm will be used to copy the required block into cache.
+   <br>
+   <br>
+</p>
+
+
+
+<table id="ad" class="w3-table-all w3-card-4">
+    <tr>
+        <th id="adv">Advantages</th>
+        <th id="disadv">Disadvantages</th>
+    </tr>
+    <tr>
+        <td class="l">  
+          prevents thrashing caused by direct mapping
+        </td>
+        <td class="r">
+          must search through all lines in cache
+        </td>
+    </tr>
+    <tr>
+        <td class="l">
+flexibility concerning which
+     block to replace when a new block is to be loaded into cache. Replacement 
+    Algorithms which can be used include Least Frequently Used and Least Recently Used.
+        </td>
+        <td class="r">
+          searching can become expensive
+        </td>
+    </tr>
+    <tr>
+        <td class="l">
+            allows for the use of Victim Cache. A block discarded from a line in 
+    Level 1 (L1) Cache is sent to Victim Cache which lies between L1 and the next
+     level of memory. It is 4 to 16 lines of cache. This lowers the miss penalty.
+        </td>
+        <td class="r">
+    complex circuitry required to examine all tags of lines in cache in parallel
+        </td>
+    </tr>
+</table>
+
+
+
+
+<h3>Example 1a</h3>
+<p>A cache memory can hold 512 Kbytes and data are transferred between main memory and the cache in blocks of 32 bytes each. The main memory consists of 128 Mbytes. Show the format of main memory addresses in an associative cache organization. Note that addressing is done at the byte-level.
+</p>
+<h3>Solution</h3>
+<p>Let w be the number of bits required to uniquely identify a location on a line of cache, assuming byte-level addressing.</p>
+<br>
+<p>2<sup>w</sup> = line size</p>
+<p>2<sup>w</sup> = 32 bytes</p>
+<p>2<sup>w</sup> = 2<sup>5</sup>
+<br>
+Therefore, w = 5 bits
+<br>
+Let s+w be the number of bits required to uniquely identify a memory address.
+<br>
+2<sup>s+w</sup> = memory size
+<br>
+2<sup>s+w</sup> = 128 Mbytes
+<br>
+2<sup>s+w</sup> = 2<sup>7</sup>*2<sup>20</sup>
+<br>
+2<sup>s+w</sup> = 2<sup>27</sup>
+<br>
+    Therefore, s+w = 27 bits
+<br>
+<br>
+Thus,    s = (s+w) – w
+<br>
+    s = 27 – 5
+<br>
+    
+    s = 22 bits
+</p>
+<img src="./../app/img/memory2.JPG" alt="" >
+<h3>Example 1b</h3>
+<p>For the 
+  hexadecimal memory location 65B8A5D find the corresponding tag/word format for the 
+  associative mapping format in (a) above.  Give your answer in hexadecimal format.
+</p>
+<h3>Solution</h3>
+<p>
+  Step 1: Find the binary equivalent of the hexadecimal number.<br>
+        65B8A5D16 = 0110 0101 1011 1000 1010 0101 1101<br><br>
+Step 2: Use the last 5 bits of the binary equivalent to represent w.<br>
+        w = 11101<br><br>
+Step 3: Use the remaining bits to represent s. The leading zero can be discarded to attain 22 bits as required.<br>
+        s = 110 0101 1011 1000 1010 010<br><br>
+Step 4: Convert s and w to the hexadecimal equivalent.<br>
+        w = 11101 = 1D16<br>
+        s = 110 0101 1011 1000 1010 010 = 32DC5216<br><br>
+</p>
+<img src="/app/img/memory3.JPG" alt="" >
+<br>
+<p>Here is a video of another worked example...</p>
+<video src="/app/video/fully.mp4" type="video/mp4" controls width="850" height="500"></video>
+
+<h1>References</h1>
+<p>Computer Organisation and Architecture – William Stallings (8th Edition)<br>
+http://www.ecs.umass.edu/ece/koren/architecture/VCache/home.html</p>
+

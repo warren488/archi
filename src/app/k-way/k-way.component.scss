@@ -1,0 +1,32 @@
+#ad{
+    padding: 5px;
+    // border: 1px solid dimgrey;
+
+    tr{
+    width: 100%;
+            // border: 1px solid dimgrey;
+    }
+
+    td{
+                // border-left: 1px solid dimgrey;
+                padding: 5px;
+    }
+
+    #adv{
+        background-color: lightgreen;
+        color: white;
+    }
+    #disadv{
+        background-color: red;
+        color: white;
+        
+    }
+    th{
+        width: 50%;
+        font-size: 25px;
+        font-weight: bold;        
+        text-align: center;
+        // border-bottom: thin solid dimgray;        
+    }
+    text-align: center;
+}

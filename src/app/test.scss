@@ -1,0 +1,66 @@
+
+div#myCarousel {
+        background-image: url("./app/img/RAM-1.jpg");
+}
+table{
+    text-align: center;
+    width: 100%;
+    border-radius: 3px;
+}
+
+#s{
+    text-align: right;
+    border-left: solid 1px dimgray;
+}
+
+#ad{
+    padding: 5px;
+    // border: 1px solid dimgrey;
+
+    tr{
+    width: 100%;
+            // border: 1px solid dimgrey;
+    }
+
+    td{
+                // border-left: 1px solid dimgrey;
+                padding: 5px;
+    }
+
+    #adv{
+        background-color: lightgreen;
+        color: white;
+    }
+    #disadv{
+        background-color: red;
+        color: white;
+        
+    }
+    th{
+        font-size: 25px;
+        font-weight: bold;        
+        text-align: center;
+        // border-bottom: thin solid dimgray;        
+    }
+    text-align: center;
+}
+
+.item.active  {
+    
+    padding: 50px;
+    color: white;
+    text-align: center;
+}
+
+
+#border{
+    td{
+        border: 1px solid dimgrey;
+        width: 33%;
+
+    }
+        border: 1px solid dimgrey;
+
+}
+
+
